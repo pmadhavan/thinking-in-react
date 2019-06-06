@@ -9,25 +9,34 @@ export interface Product {
 }
 export type TableProps = {
   products: Product[];
+  searchText: string;
+  showStocks: boolean;
 };
 const TableView = (props: TableProps) => {
   let lastCategory: string = '';
   const rows: JSX.Element[] = [];
   props.products.forEach((product: Product) => {
+    if (product.name.toLowerCase().indexOf(props.searchText) === -1) {
+      return;
+    }
+    if (props.showStocks && product.stocked !== props.showStocks) {
+      return;
+    }
     if (product.category !== lastCategory) {
       lastCategory = product.category;
-      rows.push(<Category name={product.category} />);
+      rows.push(<Category key={product.category} name={product.category} />);
     }
-    rows.push(<ItemDetail product={product} />);
+    rows.push(<ItemDetail product={product} key={product.name} />);
   });
   return (
     <table>
-      <tr>
-        <td> Name </td>
-        <td> Price </td>
-      </tr>
-
-      {rows}
+      <tbody>
+        <tr>
+          <td> Name </td>
+          <td> Price </td>
+        </tr>
+        {rows}
+      </tbody>
     </table>
   );
 };
