@@ -4,7 +4,7 @@ export type CategoryProps = {
 };
 const Category = (props: CategoryProps) => (
   <tr>
-    <th>{props.name}</th>
+    <th style={{ letterSpacing: '2px' }}>{props.name}</th>
   </tr>
 );
 

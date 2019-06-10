@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+th,
+td {
+  padding: 0.3rem;
+  text-align: left;
+  letter-spacing: 1px;
+}

@@ -4,7 +4,7 @@ import TableView from './TableView';
 import { products } from '../data/products';
 
 type FilterProductsProps = {};
-const FilterableProducts = () => {
+const FilterableProducts = (props: FilterProductsProps) => {
   const [onlyShowStocks, setShowOnlyStocks] = useState(false);
   const [searchText, setsearchText] = useState('');
 
@@ -12,14 +12,14 @@ const FilterableProducts = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setsearchText(e.target.value.toLowerCase());
   return (
-    <div>
+    <section>
       <Filter handleClick={handleClick} handleChange={handleChange} />
       <TableView
         searchText={searchText}
         showStocks={onlyShowStocks}
         products={products}
       />
-    </div>
+    </section>
   );
 };
 export default FilterableProducts;

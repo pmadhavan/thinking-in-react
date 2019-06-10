@@ -1,6 +1,7 @@
 import React from 'react';
 import Category from './Category';
 import ItemDetail from './ItemDetail';
+import './TableView.scss';
 export interface Product {
   category: string;
   stocked: boolean;
@@ -30,13 +31,13 @@ const TableView = (props: TableProps) => {
   });
   return (
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td> Name </td>
-          <td> Price </td>
+          <th> Name </th>
+          <th> Price </th>
         </tr>
-        {rows}
-      </tbody>
+      </thead>
+      <tbody>{rows}</tbody>
     </table>
   );
 };

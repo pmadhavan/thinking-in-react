@@ -1,17 +1,25 @@
 import React, { ChangeEvent } from 'react';
+import './Filter.scss';
 type FilterProps = {
   handleClick: () => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 const Filter = (props: FilterProps) => {
   return (
-    <div>
-      <input type="text" onChange={props.handleChange} />
+    <section className="filter-container">
       <div>
-        <input onClick={props.handleClick} type="checkbox" value="" />
-        <label>Only show products in stock</label>
+        <input type="text" onChange={props.handleChange} />
       </div>
-    </div>
+      <div className="stocks-checkbox">
+        <input
+          id="showOnlyStocks"
+          onClick={props.handleClick}
+          type="checkbox"
+          value=""
+        />
+        <label htmlFor="showOnlyStocks">Only show products in stock</label>
+      </div>
+    </section>
   );
 };
 export default Filter;
