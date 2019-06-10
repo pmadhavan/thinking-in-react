@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to practice the thinking in react section provided at [react documentation](https://reactjs.org/docs/thinking-in-react.html).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to practice the [Thiniking in React] (https://reactjs.org/docs/thinking-in-react.html) section provided at react documentation.
 
 ## Available Scripts
 
